@@ -71,7 +71,18 @@ namespace AuthLogins.Controllers
 
             var tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
 
-            return Ok(new { token = tokenStr });
+            var htmlContent = $@"
+        <html>
+        <head><title>Authenticating...</title></head>
+        <body>
+            <script>
+                window.opener.postMessage({{ token: '{tokenStr}' }}, '*');
+                window.close();
+            </script>
+        </body>
+        </html>";
+
+            return Content(htmlContent, "text/html");
         }
 
         [HttpGet("hello")]

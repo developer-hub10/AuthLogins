@@ -974,11 +974,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/innowave/Haroon/AuthLogins/AuthLogins.csproj",
+      "projectUniqueName": "/home/innowave/Projects/Haroon/MyProjects/AuthLogins/AuthLogins.csproj",
       "projectName": "AuthLogins",
-      "projectPath": "/home/innowave/Haroon/AuthLogins/AuthLogins.csproj",
+      "projectPath": "/home/innowave/Projects/Haroon/MyProjects/AuthLogins/AuthLogins.csproj",
       "packagesPath": "/home/innowave/.nuget/packages/",
-      "outputPath": "/home/innowave/Haroon/AuthLogins/obj/",
+      "outputPath": "/home/innowave/Projects/Haroon/MyProjects/AuthLogins/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/innowave/.nuget/NuGet/NuGet.Config"
