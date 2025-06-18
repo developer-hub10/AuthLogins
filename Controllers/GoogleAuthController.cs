@@ -71,7 +71,7 @@ namespace AuthLogins.Controllers
 
             var tokenStr = new JwtSecurityTokenHandler().WriteToken(token);
 
-             var htmlContent = $@"
+            var htmlContent = $@"
                     <html>
                     <head><title>Authenticating...</title></head>
                     <body>
@@ -90,10 +90,6 @@ namespace AuthLogins.Controllers
             return Content(htmlContent, "text/html");
         }
 
-        [HttpGet("hello")]
-        public IActionResult SayHello()
-        {
-            return Ok("Hello from Google Auth!");
-        }
+        
     }
 }
