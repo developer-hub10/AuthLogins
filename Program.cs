@@ -16,27 +16,21 @@ var jwtSettings = builder.Configuration.GetSection("Authentication:Jwt");
 
 builder.Services.AddAuthentication(options =>
 {
-     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = "Google";
     options.DefaultSignInScheme = "Cookies";
-}).AddCookie("Cookies")    
+}).AddCookie("Cookies")
 .AddJwtBearer(options =>
 {
     // var key = jwtSettings["Key"];
     var issuer = jwtSettings["Issuer"];
     var audience = jwtSettings["Audience"];
 
-    // ✅ Validate config
-    // if (string.IsNullOrWhiteSpace(key) || string.IsNullOrWhiteSpace(issuer) || string.IsNullOrWhiteSpace(audience))
-    // {
-    //     throw new Exception("JWT configuration is missing (Key, Issuer, or Audience).");
-    // }
-
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidIssuer = issuer,
         ValidAudience = audience,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("70a51f7b66d6be010196486011f016cb9d379db569c6e8048a1e7ca9a8f98c14")),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("eyJhbGciOiJIUzI1NiJ9.eyJJc3N1ZXIiOiJJc3N1ZXIiLCJleHAiOjE3NTAyMjgxOTYsImlhdCI6MTc1MDIyODE5Nn0.Yvgjs6gF2eoK_E0mCZc0jrMYfxSBv8K8fcNwnHSiKVg")),
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateIssuerSigningKey = true
